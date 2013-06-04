@@ -28,6 +28,6 @@
     <tags></tags>
   </metadata>
   <files>
-    <file src="bin\Release\Arbor.Aesculus.Core.dll" target="lib\net45\Arbor.Aesculus.dll" />
+    <file src="bin\Release\Arbor.Aesculus.Core.dll" target="lib\net45" />
   </files>
 </package>

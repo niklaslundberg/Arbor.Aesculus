@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("Arbor.Aesculus.Core")]
+[assembly: AssemblyTitle("Arbor.Aesculus")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Arbor.Aesculus.Core")]
+[assembly: AssemblyProduct("Arbor.Aesculus.ConsoleApp")]
 [assembly: AssemblyCopyright("Copyright © Niklas Lundberg  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-[assembly: Guid("4da9886e-fcd0-48a1-9a21-560fe27427a3")]
+[assembly: Guid("a725f856-d0e6-4e1d-bd05-32b8daaf72e8")]
 
 // Version information for an assembly consists of the following four values:
 //
