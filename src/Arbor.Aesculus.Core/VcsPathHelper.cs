@@ -7,6 +7,9 @@ namespace Arbor.Aesculus.Core
 {
     public static class VcsPathHelper
     {
+        static readonly List<string> SourceRootDirectoryNames = new List<string> {".git", ".hg"};
+        static readonly List<string> SourceRootFileNames = new List<string> {".deployment", ".gitattributes"};
+
         public static string TryFindVcsRootPath(string startDirectory = null)
         {
             var directoryPath = !string.IsNullOrWhiteSpace(startDirectory)
@@ -19,10 +22,19 @@ namespace Arbor.Aesculus.Core
                                                                    directoryPath));
             }
 
+            Console.WriteLine("Using start directory '{0}'", startDirectory);
+
+            Console.WriteLine("Searching for folder containing subfolders [{0}]", string.Join("|", SourceRootDirectoryNames));
+            Console.WriteLine("Searching for folder containing files [{0}]", string.Join("|", SourceRootFileNames));
+
             var startDir = new DirectoryInfo(directoryPath);
 
             DirectoryInfo rootDirectory = NavigateToSourceRoot(startDir);
 
+            if (rootDirectory == null)
+            {
+                Console.Error.WriteLine("Could not find the source root.");
+            }
 
             return rootDirectory == null ? null : rootDirectory.FullName;
         }
@@ -46,12 +58,9 @@ namespace Arbor.Aesculus.Core
                 return null;
             }
 
-            var sourceRootDirectoryNames = new List<string> {".git", ".hg"};
-            var sourceRootFileNames = new List<string> {".deployment", ".gitattributes"};
-
             Func<DirectoryInfo, bool> isNamedRoot =
                 dir =>
-                sourceRootDirectoryNames.Any(rootName =>
+                SourceRootDirectoryNames.Any(rootName =>
                                              dir.Name.Equals(rootName, StringComparison.InvariantCultureIgnoreCase));
 
             var directoryCriterias = new List<Func<DirectoryInfo, bool>>
@@ -61,7 +70,7 @@ namespace Arbor.Aesculus.Core
 
             Func<FileInfo, bool> isRootFile =
                 file =>
-                sourceRootFileNames.Any(rootFile =>
+                SourceRootFileNames.Any(rootFile =>
                                         file.Name.Equals(rootFile, StringComparison.InvariantCultureIgnoreCase));
 
             var fileCriterias = new List<Func<FileInfo, bool>>
@@ -71,7 +80,7 @@ namespace Arbor.Aesculus.Core
 
 
             bool directoryHasSourceRoot = currentDirectory.EnumerateDirectories()
-                                                          .Any(dir => sourceRootDirectoryNames.Any(pattern =>
+                                                          .Any(dir => SourceRootDirectoryNames.Any(pattern =>
                                                                                                    dir.Name.Equals(
                                                                                                        pattern,
                                                                                                        StringComparison
