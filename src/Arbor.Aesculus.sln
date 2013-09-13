@@ -5,16 +5,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.Core", "Arbo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.Tests.Integration", "Arbor.Aesculus.Tests.Integration\Arbor.Aesculus.Tests.Integration.csproj", "{EC8610CE-ADB7-492C-B054-589A471EBFC9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EF69329A-043D-49F5-8B9F-EA8DAD0CE0E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.NuGet", "Arbor.Aesculus.NuGet\Arbor.Aesculus.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.ConsoleApp", "Arbor.Aesculus.ConsoleApp\Arbor.Aesculus.ConsoleApp.csproj", "{58A4A551-08E9-4AC8-8113-8D8CCE575903}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{727F3DDC-765B-4409-9A74-1E1D8D52F43B}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.NuGet", "Arbor.Aesculus.NuGet\Arbor.Aesculus.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.ConsoleApp", "Arbor.Aesculus.ConsoleApp\Arbor.Aesculus.ConsoleApp.csproj", "{58A4A551-08E9-4AC8-8113-8D8CCE575903}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
