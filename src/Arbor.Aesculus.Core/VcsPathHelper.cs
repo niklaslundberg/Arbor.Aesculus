@@ -10,6 +10,16 @@ namespace Arbor.Aesculus.Core
         static readonly List<string> SourceRootDirectoryNames = new List<string> {".git", ".hg"};
         static readonly List<string> SourceRootFileNames = new List<string> {".deployment", ".gitattributes"};
 
+        static string RootNotFoundMessage
+        {
+            get
+            {
+                return string.Format(
+                    "Could not find the source root. Searched for folder containing any subfolder with name [{0}] and searched for folder containing any file with name [{1}]. None of these were found",
+                    string.Join("|", SourceRootDirectoryNames), string.Join("|", SourceRootFileNames));
+            }
+        }
+
         public static string TryFindVcsRootPath(string startDirectory = null)
         {
             var directoryPath = !string.IsNullOrWhiteSpace(startDirectory)
@@ -24,8 +34,8 @@ namespace Arbor.Aesculus.Core
 
             Console.WriteLine("Using start directory '{0}'", startDirectory);
 
-            Console.WriteLine("Searching for folder containing subfolders [{0}]", string.Join("|", SourceRootDirectoryNames));
-            Console.WriteLine("Searching for folder containing files [{0}]", string.Join("|", SourceRootFileNames));
+            Console.WriteLine("Searching for folder containing any subfolder with name [{0}]", string.Join("|", SourceRootDirectoryNames));
+            Console.WriteLine("Searching for folder containing any file with name [{0}]", string.Join("|", SourceRootFileNames));
 
             var startDir = new DirectoryInfo(directoryPath);
 
@@ -33,7 +43,7 @@ namespace Arbor.Aesculus.Core
 
             if (rootDirectory == null)
             {
-                Console.Error.WriteLine("Could not find the source root.");
+                Console.Error.WriteLine(RootNotFoundMessage);
             }
 
             return rootDirectory == null ? null : rootDirectory.FullName;
@@ -48,7 +58,7 @@ namespace Arbor.Aesculus.Core
                 return rootDirectory;
             }
 
-            throw new DirectoryNotFoundException("Could not find the source root");
+            throw new DirectoryNotFoundException(RootNotFoundMessage);
         }
 
         static DirectoryInfo NavigateToSourceRoot(DirectoryInfo currentDirectory)
