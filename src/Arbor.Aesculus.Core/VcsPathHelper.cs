@@ -20,7 +20,7 @@ namespace Arbor.Aesculus.Core
             }
         }
 
-        public static string TryFindVcsRootPath(string startDirectory = null)
+        public static string TryFindVcsRootPath(string startDirectory = null, bool logg = false)
         {
             var directoryPath = !string.IsNullOrWhiteSpace(startDirectory)
                                     ? startDirectory
@@ -32,10 +32,15 @@ namespace Arbor.Aesculus.Core
                                                                    directoryPath));
             }
 
-            Console.WriteLine("Using start directory '{0}'", startDirectory);
+            if (logg)
+            {
+                Console.WriteLine("Using start directory '{0}'", startDirectory);
 
-            Console.WriteLine("Searching for folder containing any subfolder with name [{0}]", string.Join("|", SourceRootDirectoryNames));
-            Console.WriteLine("Searching for folder containing any file with name [{0}]", string.Join("|", SourceRootFileNames));
+                Console.WriteLine("Searching for folder containing any subfolder with name [{0}]",
+                                  string.Join("|", SourceRootDirectoryNames));
+                Console.WriteLine("Searching for folder containing any file with name [{0}]",
+                                  string.Join("|", SourceRootFileNames));
+            }
 
             var startDir = new DirectoryInfo(directoryPath);
 
@@ -89,12 +94,13 @@ namespace Arbor.Aesculus.Core
                                     };
 
 
-            bool directoryHasSourceRoot = currentDirectory.EnumerateDirectories()
-                                                          .Any(dir => SourceRootDirectoryNames.Any(pattern =>
-                                                                                                   dir.Name.Equals(
-                                                                                                       pattern,
-                                                                                                       StringComparison
-                                                                                                           .InvariantCultureIgnoreCase)));
+            var subDirectories = currentDirectory.EnumerateDirectories();
+            bool directoryHasSourceRoot = subDirectories.Any(dir =>
+                                                             SourceRootDirectoryNames.Any(pattern =>
+                                                                                          dir.Name.Equals(
+                                                                                              pattern,
+                                                                                              StringComparison
+                                                                                                  .InvariantCultureIgnoreCase)));
             if (directoryHasSourceRoot)
             {
                 return currentDirectory;
