@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Arbor.Aesculus</id>
-    <version>0.0.1</version>
+    <version>$version$</version>
     <title>Arbor.Aesculus</title>
     <authors>Niklas Lundberg</authors>
     <owners></owners>
@@ -15,11 +15,11 @@
     A Version Control System path helper library
     </summary>
     <language>en-US</language>
-    <projectUrl>https://nuget.org/packages/Arbor.Aesculus.NuGet</projectUrl>
+    <projectUrl>https://github.com/niklaslundberg/Arbor.Aesculus</projectUrl>
     <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <copyright>Copyright Niklas Lundberg 2013</copyright>
+    <copyright>Copyright Niklas Lundberg 2013-2015</copyright>
     <dependencies>
         <group targetFramework="net45">
         </group>
@@ -28,6 +28,6 @@
     <tags></tags>
   </metadata>
   <files>
-    <file src="bin\Release\Arbor.Aesculus.Core.dll" target="lib\net45" />
+    <file src="bin\$configuration$\Arbor.Aesculus.Core.dll" target="lib\net45" />
   </files>
 </package>
