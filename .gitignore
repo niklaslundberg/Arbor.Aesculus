@@ -1,5 +1,7 @@
 .HistoryData
 Artifacts
+.vs
+*.lock.json
 #################
 ## Eclipse
 #################

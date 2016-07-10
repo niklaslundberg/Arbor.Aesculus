@@ -7,7 +7,7 @@
     <authors>Niklas Lundberg</authors>
     <owners></owners>
     <description>
-    A Version Control System path helper library
+    A library that helps out to find the root directory of a repository
     </description>
     <releaseNotes>
     </releaseNotes>
@@ -19,15 +19,20 @@
     <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <copyright>Copyright Niklas Lundberg 2013-2015</copyright>
+    <copyright>Copyright Niklas Lundberg 2013-2016</copyright>
     <dependencies>
-        <group targetFramework="net45">
-        </group>
+      <group targetFramework="net45">
+        <dependency id="System.IO" version="4.0.0" />
+      </group>
+
+      <group targetFramework="netstandard1.3">
+        <dependency id="System.IO" version="(4.0,)" />
+      </group>
     </dependencies>
     <references></references>
     <tags></tags>
   </metadata>
   <files>
-    <file src="bin\$configuration$\Arbor.Aesculus.Core.dll" target="lib\net45" />
+    <file src="Arbor.Aesculus.Core\bin\$configuration$\netstandard1.3\Arbor.Aesculus.Core.dll" target="lib\netstandard1.3" />
   </files>
 </package>

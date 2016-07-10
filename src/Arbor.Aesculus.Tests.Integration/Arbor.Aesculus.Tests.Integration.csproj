@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Arbor.Aesculus.Core, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Arbor.Aesculus.Core\bin\Debug\netstandard1.3\Arbor.Aesculus.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Machine.Specifications">
       <HintPath>..\packages\Machine.Specifications.0.9.1\lib\net45\Machine.Specifications.dll</HintPath>
     </Reference>
@@ -54,12 +58,6 @@
     <Compile Include="when_calling_find_vcs_path_without_params_in_this_solution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="when_calling_try_find_vcs_path_in_a_non_vcs_directory.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Arbor.Aesculus.Core\Arbor.Aesculus.Core.csproj">
-      <Project>{1EC61050-A5E6-4E48-BB94-BCFDB815E1B8}</Project>
-      <Name>Arbor.Aesculus.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
