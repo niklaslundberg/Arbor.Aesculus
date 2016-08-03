@@ -27,6 +27,9 @@
 
       <group targetFramework="netstandard1.3">
         <dependency id="System.IO" version="(4.0,)" />
+        <dependency id="System.IO.FileSystem" version="(4.0,)" />
+        <dependency id="System.Console" version="[4.0,)" />
+        <dependency id="System.AppContext" version="[4.1,)" />
       </group>
     </dependencies>
     <references></references>
