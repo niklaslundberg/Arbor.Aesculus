@@ -10,7 +10,7 @@
   <IgnoreThisComponentCompletely>false</IgnoreThisComponentCompletely>
   <RunPreBuildEvents>false</RunPreBuildEvents>
   <RunPostBuildEvents>false</RunPostBuildEvents>
-  <PreviouslyBuiltSuccessfully>true</PreviouslyBuiltSuccessfully>
+  <PreviouslyBuiltSuccessfully>false</PreviouslyBuiltSuccessfully>
   <InstrumentAssembly>true</InstrumentAssembly>
   <PreventSigningOfAssembly>false</PreventSigningOfAssembly>
   <AnalyseExecutionTimes>true</AnalyseExecutionTimes>
@@ -23,4 +23,5 @@
   <UseCPUArchitecture>AutoDetect</UseCPUArchitecture>
   <MSTestThreadApartmentState>STA</MSTestThreadApartmentState>
   <BuildProcessArchitecture>x86</BuildProcessArchitecture>
+  <AdditionalFilesToInclude>project.json</AdditionalFilesToInclude>
 </ProjectConfiguration>
