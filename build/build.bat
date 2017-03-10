@@ -1,5 +1,7 @@
 SET OldPath=%~dp0
 
+SET Arbor.X.MSBuild.NuGetRestore.Enabled=true
+
 CD ..
 
 dotnet restore
