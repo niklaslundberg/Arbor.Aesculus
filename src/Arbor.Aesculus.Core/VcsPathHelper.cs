@@ -53,7 +53,7 @@ namespace Arbor.Aesculus.Core
 
         public static string FindVcsRootPath(string startDirectory = null)
         {
-            var rootDirectory = TryFindVcsRootPath(startDirectory);
+            string rootDirectory = TryFindVcsRootPath(startDirectory);
 
             if (!string.IsNullOrWhiteSpace(rootDirectory))
             {
@@ -70,19 +70,13 @@ namespace Arbor.Aesculus.Core
                 return null;
             }
 
-            Func<DirectoryInfo, bool> isNamedRoot =
-                dir =>
-                _SourceRootDirectoryNames.Any(
-                    rootName => dir.Name.Equals(rootName, StringComparison.OrdinalIgnoreCase));
+            bool IsNamedRoot(DirectoryInfo dir) => _SourceRootDirectoryNames.Any(rootName => dir.Name.Equals(rootName, StringComparison.OrdinalIgnoreCase));
 
-            var directoryCriterias = new List<Func<DirectoryInfo, bool>> { isNamedRoot };
+            var directoryCriterias = new List<Func<DirectoryInfo, bool>> { IsNamedRoot };
 
-            Func<FileInfo, bool> isRootFile =
-                file =>
-                _SourceRootFileNames.Any(
-                    rootFile => file.Name.Equals(rootFile, StringComparison.OrdinalIgnoreCase));
+            bool IsRootFile(FileInfo file) => _SourceRootFileNames.Any(rootFile => file.Name.Equals(rootFile, StringComparison.OrdinalIgnoreCase));
 
-            var fileCriterias = new List<Func<FileInfo, bool>> { isRootFile };
+            var fileCriterias = new List<Func<FileInfo, bool>> { IsRootFile };
 
             IEnumerable<DirectoryInfo> subDirectories = currentDirectory.EnumerateDirectories();
 
