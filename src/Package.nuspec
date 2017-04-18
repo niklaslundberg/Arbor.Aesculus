@@ -31,11 +31,18 @@
         <dependency id="System.Console" version="[4.0,)" />
         <dependency id="System.AppContext" version="[4.1,)" />
       </group>
+      <group targetFramework="net46">
+        <dependency id="System.IO" version="(4.0,)" />
+        <dependency id="System.IO.FileSystem" version="(4.0,)" />
+        <dependency id="System.Console" version="[4.0,)" />
+        <dependency id="System.AppContext" version="[4.1,)" />
+      </group>
     </dependencies>
     <references></references>
     <tags></tags>
   </metadata>
   <files>
     <file src="Arbor.Aesculus.Core\bin\$configuration$\netstandard1.3\Arbor.Aesculus.Core.dll" target="lib\netstandard1.3" />
+    <file src="Arbor.Aesculus.Core\bin\$configuration$\net46\Arbor.Aesculus.Core.dll" target="lib\net46" />
   </files>
 </package>
