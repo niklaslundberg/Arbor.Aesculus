@@ -2,6 +2,7 @@
 Artifacts
 .vs
 *.lock.json
+*UpgradeLog*
 #################
 ## Eclipse
 #################

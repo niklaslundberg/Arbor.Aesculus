@@ -26,16 +26,18 @@
       </group>
 
       <group targetFramework="netstandard1.3">
-        <dependency id="System.IO" version="(4.0,)" />
-        <dependency id="System.IO.FileSystem" version="(4.0,)" />
-        <dependency id="System.Console" version="[4.0,)" />
-        <dependency id="System.AppContext" version="[4.1,)" />
+        <dependency id="System.IO" version="[4.3.0,5.0.0)" />
+        <dependency id="System.IO.FileSystem" version="[4.3.0,5.0.0)" />
+        <dependency id="System.Console" version="[4.3.0,5.0.0)" />
+        <dependency id="System.AppContext" version="[4.3.0,5.0.0)" />
       </group>
       <group targetFramework="net46">
-        <dependency id="System.IO" version="(4.0,)" />
-        <dependency id="System.IO.FileSystem" version="(4.0,)" />
-        <dependency id="System.Console" version="[4.0,)" />
-        <dependency id="System.AppContext" version="[4.1,)" />
+        <dependency id="System.IO" version="[4.3.0,5.0.0)" />
+        <dependency id="System.IO.FileSystem" version="[4.3.0,5.0.0)" />
+        <dependency id="System.Console" version="[4.3.0,5.0.0)" />
+        <dependency id="System.AppContext" version="[4.3.0,5.0.0)" />
+      </group>
+      <group targetFramework="net47">
       </group>
     </dependencies>
     <references></references>
@@ -44,5 +46,6 @@
   <files>
     <file src="Arbor.Aesculus.Core\bin\$configuration$\netstandard1.3\Arbor.Aesculus.Core.dll" target="lib\netstandard1.3" />
     <file src="Arbor.Aesculus.Core\bin\$configuration$\net46\Arbor.Aesculus.Core.dll" target="lib\net46" />
+    <file src="Arbor.Aesculus.Core\bin\$configuration$\net47\Arbor.Aesculus.Core.dll" target="lib\net47" />
   </files>
 </package>
