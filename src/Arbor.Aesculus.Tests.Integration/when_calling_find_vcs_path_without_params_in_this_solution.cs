@@ -3,6 +3,7 @@
 using Arbor.Aesculus.Core;
 
 using Machine.Specifications;
+using NCrunch.Framework;
 
 namespace Arbor.Aesculus.Tests.Integration
 {
@@ -11,7 +12,7 @@ namespace Arbor.Aesculus.Tests.Integration
     {
         static string vcsRootPath;
 
-        Because of = () => { vcsRootPath = VcsPathHelper.FindVcsRootPath(); };
+        Because of = () => { vcsRootPath = VcsPathHelper.FindVcsRootPath(new FileInfo(NCrunchEnvironment.GetOriginalSolutionPath()).Directory?.FullName); };
 
         It should_not_return_null = () => vcsRootPath.ShouldNotBeNull();
 
