@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Arbor.Aesculus</id>
-    <version>$version$</version>
+    <version>0.1.0</version>
     <title>Arbor.Aesculus</title>
     <authors>Niklas Lundberg</authors>
     <owners></owners>
