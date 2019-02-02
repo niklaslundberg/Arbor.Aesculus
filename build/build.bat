@@ -13,6 +13,6 @@ REM dotnet restore
 
 CD "%OldPath%"
 
-CALL Build.exe
+CALL dotnet arbor-build
 
 EXIT /B %ERRORLEVEL%

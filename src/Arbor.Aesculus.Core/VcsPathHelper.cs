@@ -12,9 +12,9 @@ namespace Arbor.Aesculus.Core
         private static readonly List<string>
             _SourceRootFileNames = new List<string> { ".deployment", ".gitattributes" };
 
-        private static string RootNotFoundMessage
-            =>
-                $"Could not find the source root. Searched for folder containing any subfolder with name [{string.Join("|", _SourceRootDirectoryNames)}] and searched for folder containing any file with name [{string.Join("|", _SourceRootFileNames)}]. None of these were found";
+        private static readonly string _RootNotFoundMessage
+            =
+            $"Could not find the source root. Searched for folder containing any subfolder with name [{string.Join("|", _SourceRootDirectoryNames)}] and searched for folder containing any file with name [{string.Join("|", _SourceRootFileNames)}]. None of these were found";
 
         public static string TryFindVcsRootPath(string startDirectory = null, Action<string> logger = null)
         {
@@ -33,6 +33,7 @@ namespace Arbor.Aesculus.Core
 
                 logger.Invoke(
                     $"Searching for folder containing any subfolder with name [{string.Join("|", _SourceRootDirectoryNames)}]");
+
                 logger.Invoke(
                     $"Searching for folder containing any file with name [{string.Join("|", _SourceRootFileNames)}]");
             }
@@ -43,7 +44,7 @@ namespace Arbor.Aesculus.Core
 
             if (rootDirectory == null)
             {
-                logger?.Invoke(RootNotFoundMessage);
+                logger?.Invoke(_RootNotFoundMessage);
             }
 
             return rootDirectory?.FullName;
@@ -58,7 +59,7 @@ namespace Arbor.Aesculus.Core
                 return rootDirectory;
             }
 
-            throw new DirectoryNotFoundException(RootNotFoundMessage);
+            throw new DirectoryNotFoundException(_RootNotFoundMessage);
         }
 
         private static DirectoryInfo NavigateToSourceRoot(DirectoryInfo currentDirectory)
@@ -74,7 +75,7 @@ namespace Arbor.Aesculus.Core
                     dir.Name.Equals(rootName, StringComparison.OrdinalIgnoreCase));
             }
 
-            var directoryCriterias = new List<Func<DirectoryInfo, bool>> { IsNamedRoot };
+            var directoryCriterion = new List<Func<DirectoryInfo, bool>> { IsNamedRoot };
 
             bool IsRootFile(FileInfo file)
             {
@@ -82,7 +83,7 @@ namespace Arbor.Aesculus.Core
                     file.Name.Equals(rootFile, StringComparison.OrdinalIgnoreCase));
             }
 
-            var fileCriterias = new List<Func<FileInfo, bool>> { IsRootFile };
+            var fileCriterion = new List<Func<FileInfo, bool>> { IsRootFile };
 
             IEnumerable<DirectoryInfo> subDirectories = currentDirectory.EnumerateDirectories();
 
@@ -91,19 +92,20 @@ namespace Arbor.Aesculus.Core
                     dir =>
                         _SourceRootDirectoryNames.Any(
                             pattern => dir.Name.Equals(pattern, StringComparison.OrdinalIgnoreCase)));
+
             if (directoryHasSourceRoot)
             {
                 return currentDirectory;
             }
 
-            bool isRootDir = directoryCriterias.Any(filter => filter(currentDirectory));
+            bool isRootDir = directoryCriterion.Any(filter => filter(currentDirectory));
 
             if (isRootDir)
             {
                 return currentDirectory;
             }
 
-            bool hasRootFile = currentDirectory.EnumerateFiles().Any(file => fileCriterias.Any(filter => filter(file)));
+            bool hasRootFile = currentDirectory.EnumerateFiles().Any(file => fileCriterion.Any(filter => filter(file)));
 
             if (hasRootFile)
             {

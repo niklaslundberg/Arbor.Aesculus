@@ -1,7 +1,5 @@
 ﻿using System.IO;
-
 using Arbor.Aesculus.Core;
-
 using Machine.Specifications;
 
 namespace Arbor.Aesculus.Tests.Integration

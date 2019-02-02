@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\.gitignore = ..\.gitignore
 		Directory.Build.props = Directory.Build.props
 		..\License.txt = ..\License.txt
-		Package.nuspec = Package.nuspec
 		..\README.md = ..\README.md
 		..\version.json = ..\version.json
 	EndProjectSection
@@ -17,6 +16,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbor.Aesculus.Core", "Arbor.Aesculus.Core\Arbor.Aesculus.Core.csproj", "{36AABD72-8885-42E9-90DA-4733CAD058EA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbor.Aesculus.Tests.Integration", "Arbor.Aesculus.Tests.Integration\Arbor.Aesculus.Tests.Integration.csproj", "{130AB51C-5975-4528-BD4C-24865667B0C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.NCrunch", "Arbor.Aesculus.NCrunch\Arbor.Aesculus.NCrunch.csproj", "{10DA3738-F30C-4CE8-99F7-83EF35F3806B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +33,10 @@ Global
 		{130AB51C-5975-4528-BD4C-24865667B0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130AB51C-5975-4528-BD4C-24865667B0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130AB51C-5975-4528-BD4C-24865667B0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DA3738-F30C-4CE8-99F7-83EF35F3806B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DA3738-F30C-4CE8-99F7-83EF35F3806B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DA3738-F30C-4CE8-99F7-83EF35F3806B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DA3738-F30C-4CE8-99F7-83EF35F3806B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
