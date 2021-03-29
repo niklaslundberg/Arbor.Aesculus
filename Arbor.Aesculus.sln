@@ -1,24 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{367E3926-4D20-4FEB-A035-4C165D2E708E}"
 	ProjectSection(SolutionItems) = preProject
-		..\.gitattributes = ..\.gitattributes
-		..\.gitignore = ..\.gitignore
-		..\build\build.bat = ..\build\build.bat
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		Directory.Build.props = Directory.Build.props
-		..\License.txt = ..\License.txt
-		..\README.md = ..\README.md
-		..\version.json = ..\version.json
+		License.txt = License.txt
+		README.md = README.md
+		version.json = version.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbor.Aesculus.Core", "Arbor.Aesculus.Core\Arbor.Aesculus.Core.csproj", "{36AABD72-8885-42E9-90DA-4733CAD058EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbor.Aesculus.Tests.Integration", "tests\Arbor.Aesculus.Tests.Integration\Arbor.Aesculus.Tests.Integration.csproj", "{130AB51C-5975-4528-BD4C-24865667B0C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbor.Aesculus.Tests.Integration", "Arbor.Aesculus.Tests.Integration\Arbor.Aesculus.Tests.Integration.csproj", "{130AB51C-5975-4528-BD4C-24865667B0C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbor.Aesculus.NCrunch", "src\Arbor.Aesculus.NCrunch\Arbor.Aesculus.NCrunch.csproj", "{10DA3738-F30C-4CE8-99F7-83EF35F3806B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbor.Aesculus.NCrunch", "Arbor.Aesculus.NCrunch\Arbor.Aesculus.NCrunch.csproj", "{10DA3738-F30C-4CE8-99F7-83EF35F3806B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbor.Aesculus.Core", "src\Arbor.Aesculus.Core\Arbor.Aesculus.Core.csproj", "{627F8F7E-0FBE-41B1-8ADB-23858043D589}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{36AABD72-8885-42E9-90DA-4733CAD058EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36AABD72-8885-42E9-90DA-4733CAD058EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36AABD72-8885-42E9-90DA-4733CAD058EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36AABD72-8885-42E9-90DA-4733CAD058EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{130AB51C-5975-4528-BD4C-24865667B0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{130AB51C-5975-4528-BD4C-24865667B0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130AB51C-5975-4528-BD4C-24865667B0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +33,10 @@ Global
 		{10DA3738-F30C-4CE8-99F7-83EF35F3806B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10DA3738-F30C-4CE8-99F7-83EF35F3806B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10DA3738-F30C-4CE8-99F7-83EF35F3806B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627F8F7E-0FBE-41B1-8ADB-23858043D589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627F8F7E-0FBE-41B1-8ADB-23858043D589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627F8F7E-0FBE-41B1-8ADB-23858043D589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627F8F7E-0FBE-41B1-8ADB-23858043D589}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
