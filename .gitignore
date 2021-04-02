@@ -1,7 +1,6 @@
 .HistoryData
 Artifacts
 .vs
-*.lock.json
 *UpgradeLog*
 *.orig
 #################
