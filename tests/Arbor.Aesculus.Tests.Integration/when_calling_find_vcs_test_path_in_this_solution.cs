@@ -8,7 +8,7 @@ namespace Arbor.Aesculus.Tests.Integration
     [Subject(typeof(VcsPathHelper))]
     public class when_calling_find_vcs_test_path_in_this_solution
     {
-        static string vcsRootPath;
+        static string? vcsRootPath;
 
         Because of = () => { vcsRootPath = VcsTestPathHelper.TryFindVcsRootPath(); };
 
