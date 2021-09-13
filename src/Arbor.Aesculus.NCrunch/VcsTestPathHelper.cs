@@ -7,7 +7,7 @@ namespace Arbor.Aesculus.NCrunch
 {
     public static class VcsTestPathHelper
     {
-        public static string TryFindVcsRootPath(Action<string> logger = null)
+        public static string? TryFindVcsRootPath(Action<string>? logger = null)
         {
             if (NCrunchEnvironment.NCrunchIsResident())
             {

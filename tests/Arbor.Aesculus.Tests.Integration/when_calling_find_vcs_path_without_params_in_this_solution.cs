@@ -8,7 +8,7 @@ namespace Arbor.Aesculus.Tests.Integration
     [Subject(typeof(VcsPathHelper))]
     public class when_calling_find_vcs_path_without_params_in_this_solution
     {
-        static string vcsRootPath;
+        static string? vcsRootPath;
 
         Because of = () => { vcsRootPath = VcsPathHelper.FindVcsRootPath(new FileInfo(NCrunchEnvironment.GetOriginalSolutionPath()).Directory?.FullName); };
 
