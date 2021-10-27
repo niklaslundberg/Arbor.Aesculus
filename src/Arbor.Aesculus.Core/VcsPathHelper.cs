@@ -7,19 +7,17 @@ namespace Arbor.Aesculus.Core
 {
     public static class VcsPathHelper
     {
-        private static readonly List<string> _SourceRootDirectoryNames = new List<string> { ".git" };
+        private static readonly List<string> SourceRootDirectoryNames = new() { ".git" };
 
-        private static readonly List<string>
-            _SourceRootFileNames = new List<string> { ".deployment", ".gitattributes" };
+        private static readonly List<string> SourceRootFileNames = new() { ".deployment", ".gitattributes" };
 
-        private static readonly string _RootNotFoundMessage
-            =
-            $"Could not find the source root. Searched for folder containing any subfolder with name [{string.Join("|", _SourceRootDirectoryNames)}] and searched for folder containing any file with name [{string.Join("|", _SourceRootFileNames)}]. None of these were found";
+        private static readonly string RootNotFoundMessage =
+            $"Could not find the source root. Searched for folder containing any subfolder with name [{string.Join("|", SourceRootDirectoryNames)}] and searched for folder containing any file with name [{string.Join("|", SourceRootFileNames)}]. None of these were found";
 
-        public static string TryFindVcsRootPath(string startDirectory = null, Action<string> logger = null)
+        public static string? TryFindVcsRootPath(string? startDirectory = null, Action<string>? logger = null)
         {
             string directoryPath = !string.IsNullOrWhiteSpace(startDirectory)
-                ? startDirectory
+                ? startDirectory!
                 : AppContext.BaseDirectory;
 
             if (!Directory.Exists(directoryPath))
@@ -32,46 +30,46 @@ namespace Arbor.Aesculus.Core
                 logger.Invoke($"Using start directory '{startDirectory}'");
 
                 logger.Invoke(
-                    $"Searching for folder containing any subfolder with name [{string.Join("|", _SourceRootDirectoryNames)}]");
+                    $"Searching for folder containing any subfolder with name [{string.Join("|", SourceRootDirectoryNames)}]");
 
                 logger.Invoke(
-                    $"Searching for folder containing any file with name [{string.Join("|", _SourceRootFileNames)}]");
+                    $"Searching for folder containing any file with name [{string.Join("|", SourceRootFileNames)}]");
             }
 
             var startDir = new DirectoryInfo(directoryPath);
 
-            DirectoryInfo rootDirectory = NavigateToSourceRoot(startDir);
+            DirectoryInfo? rootDirectory = NavigateToSourceRoot(startDir);
 
-            if (rootDirectory == null)
+            if (rootDirectory is null)
             {
-                logger?.Invoke(_RootNotFoundMessage);
+                logger?.Invoke(RootNotFoundMessage);
             }
 
             return rootDirectory?.FullName;
         }
 
-        public static string FindVcsRootPath(string startDirectory = null)
+        public static string? FindVcsRootPath(string? startDirectory = null)
         {
-            string rootDirectory = TryFindVcsRootPath(startDirectory);
+            string? rootDirectory = TryFindVcsRootPath(startDirectory);
 
             if (!string.IsNullOrWhiteSpace(rootDirectory))
             {
                 return rootDirectory;
             }
 
-            throw new DirectoryNotFoundException(_RootNotFoundMessage);
+            throw new DirectoryNotFoundException(RootNotFoundMessage);
         }
 
-        private static DirectoryInfo NavigateToSourceRoot(DirectoryInfo currentDirectory)
+        private static DirectoryInfo? NavigateToSourceRoot(DirectoryInfo? currentDirectory)
         {
-            if (currentDirectory?.Parent == null)
+            if (currentDirectory?.Parent is null)
             {
                 return null;
             }
 
             bool IsNamedRoot(DirectoryInfo dir)
             {
-                return _SourceRootDirectoryNames.Any(rootName =>
+                return SourceRootDirectoryNames.Any(rootName =>
                     dir.Name.Equals(rootName, StringComparison.OrdinalIgnoreCase));
             }
 
@@ -79,7 +77,7 @@ namespace Arbor.Aesculus.Core
 
             bool IsRootFile(FileInfo file)
             {
-                return _SourceRootFileNames.Any(rootFile =>
+                return SourceRootFileNames.Any(rootFile =>
                     file.Name.Equals(rootFile, StringComparison.OrdinalIgnoreCase));
             }
 
@@ -87,11 +85,8 @@ namespace Arbor.Aesculus.Core
 
             IEnumerable<DirectoryInfo> subDirectories = currentDirectory.EnumerateDirectories();
 
-            bool directoryHasSourceRoot =
-                subDirectories.Any(
-                    dir =>
-                        _SourceRootDirectoryNames.Any(
-                            pattern => dir.Name.Equals(pattern, StringComparison.OrdinalIgnoreCase)));
+            bool directoryHasSourceRoot = subDirectories.Any(dir =>
+                SourceRootDirectoryNames.Any(pattern => dir.Name.Equals(pattern, StringComparison.OrdinalIgnoreCase)));
 
             if (directoryHasSourceRoot)
             {
