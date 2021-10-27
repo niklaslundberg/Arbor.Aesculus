@@ -21,4 +21,8 @@
     <PackageReference Include="NCrunch.Framework" Version="4.7.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="*.ncrunchproject" />
+  </ItemGroup>
+
 </Project>
