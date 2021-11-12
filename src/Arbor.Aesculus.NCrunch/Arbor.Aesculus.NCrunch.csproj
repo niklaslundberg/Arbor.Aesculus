@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Arbor.Aesculus.Core\Arbor.Aesculus.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="*.ncrunchproject" />
+  </ItemGroup>
+
 </Project>
