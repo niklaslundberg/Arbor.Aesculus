@@ -162,7 +162,7 @@
         "type": "Project"
       }
     },
-    ".NETCoreApp,Version=v5.0": {
+    "net6.0": {
       "NCrunch.Framework": {
         "type": "Direct",
         "requested": "[4.7.0.4, )",
@@ -1088,7 +1088,7 @@
         "type": "Project"
       }
     },
-    "net6.0": {
+    "net7.0": {
       "NCrunch.Framework": {
         "type": "Direct",
         "requested": "[4.7.0.4, )",

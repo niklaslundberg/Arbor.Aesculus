@@ -1,7 +1,7 @@
 {
   "version": 1,
   "dependencies": {
-    "net6.0": {
+    "net7.0": {
       "Machine.Specifications": {
         "type": "Direct",
         "requested": "[1.0.0, )",
@@ -1166,8 +1166,8 @@
       "arbor.aesculus.ncrunch": {
         "type": "Project",
         "dependencies": {
-          "Arbor.Aesculus.Core": "1.0.0",
-          "NCrunch.Framework": "4.7.0.4"
+          "Arbor.Aesculus.Core": "[1.0.0, )",
+          "NCrunch.Framework": "[4.7.0.4, )"
         }
       }
     }
