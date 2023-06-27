@@ -19,19 +19,19 @@
     <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <copyright>Copyright Niklas Lundberg 2013-2022</copyright>
+    <copyright>Copyright Niklas Lundberg 2013-2023</copyright>
     <dependencies>
       <group targetFramework="netstandard2.0">
         <dependency id="Arbor.Aesculus" version="$version$" />
-        <dependency id="NCrunch.Framework" version="[4.7.0,)" />
+        <dependency id="NCrunch.Framework" version="[4.17.0,)" />
       </group>
       <group targetFramework="net5.0">
         <dependency id="Arbor.Aesculus" version="$version$" />
-        <dependency id="NCrunch.Framework" version="[4.7.0,)" />
+        <dependency id="NCrunch.Framework" version="[4.17.0,)" />
       </group>
       <group targetFramework="net6.0">
         <dependency id="Arbor.Aesculus" version="$version$" />
-        <dependency id="NCrunch.Framework" version="[4.7.0,)" />
+        <dependency id="NCrunch.Framework" version="[4.17.0,)" />
       </group>
     </dependencies>
     <references></references>
