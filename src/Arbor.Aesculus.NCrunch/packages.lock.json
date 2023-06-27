@@ -4,9 +4,9 @@
     ".NETStandard,Version=v2.0": {
       "NCrunch.Framework": {
         "type": "Direct",
-        "requested": "[4.7.0.4, )",
-        "resolved": "4.7.0.4",
-        "contentHash": "Mpx7XHuotlxj+qI+MCaHPQz+59IQqtzwt79CBrGo38p+yzsqoyC59AbwFTXJZwHwXoN5CZ505dd0boNgqPTlDg==",
+        "requested": "[4.17.0.5, )",
+        "resolved": "4.17.0.5",
+        "contentHash": "PdA7s72DdlJi3qNXOWJ84dTFw5G3pqWkovklLAryYotmXfGMqr2bh3aBub/OlPxlbcQIVQysmRUh8XJKaZFR2g==",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
@@ -165,9 +165,9 @@
     "net6.0": {
       "NCrunch.Framework": {
         "type": "Direct",
-        "requested": "[4.7.0.4, )",
-        "resolved": "4.7.0.4",
-        "contentHash": "Mpx7XHuotlxj+qI+MCaHPQz+59IQqtzwt79CBrGo38p+yzsqoyC59AbwFTXJZwHwXoN5CZ505dd0boNgqPTlDg==",
+        "requested": "[4.17.0.5, )",
+        "resolved": "4.17.0.5",
+        "contentHash": "PdA7s72DdlJi3qNXOWJ84dTFw5G3pqWkovklLAryYotmXfGMqr2bh3aBub/OlPxlbcQIVQysmRUh8XJKaZFR2g==",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
@@ -1091,9 +1091,9 @@
     "net7.0": {
       "NCrunch.Framework": {
         "type": "Direct",
-        "requested": "[4.7.0.4, )",
-        "resolved": "4.7.0.4",
-        "contentHash": "Mpx7XHuotlxj+qI+MCaHPQz+59IQqtzwt79CBrGo38p+yzsqoyC59AbwFTXJZwHwXoN5CZ505dd0boNgqPTlDg==",
+        "requested": "[4.17.0.5, )",
+        "resolved": "4.17.0.5",
+        "contentHash": "PdA7s72DdlJi3qNXOWJ84dTFw5G3pqWkovklLAryYotmXfGMqr2bh3aBub/OlPxlbcQIVQysmRUh8XJKaZFR2g==",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.3.0"
