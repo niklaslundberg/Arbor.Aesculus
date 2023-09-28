@@ -12,15 +12,10 @@ namespace Arbor.Aesculus.Tests.Integration
 
         private Because of = () =>
         {
-            if (NCrunchEnvironment.NCrunchIsResident())
-            {
-                vcsRootPath = VcsPathHelper.FindVcsRootPath(new FileInfo(NCrunchEnvironment.GetOriginalSolutionPath())
-                                                           .Directory?.FullName);
-            }
-            else
-            {
-                vcsRootPath = Path.GetTempPath();
-            }
+            vcsRootPath = NCrunchEnvironment.NCrunchIsResident()
+                ? VcsPathHelper.FindVcsRootPath(new FileInfo(NCrunchEnvironment.GetOriginalSolutionPath())
+                    .Directory?.FullName)
+                : Path.GetTempPath();
         };
 
         It should_not_return_null = () => vcsRootPath.ShouldNotBeNull();
