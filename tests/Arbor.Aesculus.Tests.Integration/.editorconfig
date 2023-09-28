@@ -352,7 +352,7 @@ dotnet_diagnostic.S2933.severity = none
 dotnet_diagnostic.IDE0044.severity = silent
 
 # IDE0052: Remove unread private members
-dotnet_diagnostic.IDE0052.severity = silent
+dotnet_diagnostic.IDE0052.severity = none
 
 # CA1707: Identifiers should not contain underscores
 dotnet_diagnostic.CA1707.severity = silent

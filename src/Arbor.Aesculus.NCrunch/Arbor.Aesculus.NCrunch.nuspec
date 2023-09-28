@@ -25,11 +25,15 @@
         <dependency id="Arbor.Aesculus" version="$version$" />
         <dependency id="NCrunch.Framework" version="[4.17.0,)" />
       </group>
-      <group targetFramework="net5.0">
+      <group targetFramework="net6.0">
         <dependency id="Arbor.Aesculus" version="$version$" />
         <dependency id="NCrunch.Framework" version="[4.17.0,)" />
       </group>
-      <group targetFramework="net6.0">
+      <group targetFramework="net7.0">
+        <dependency id="Arbor.Aesculus" version="$version$" />
+        <dependency id="NCrunch.Framework" version="[4.17.0,)" />
+      </group>
+      <group targetFramework="net8.0">
         <dependency id="Arbor.Aesculus" version="$version$" />
         <dependency id="NCrunch.Framework" version="[4.17.0,)" />
       </group>
