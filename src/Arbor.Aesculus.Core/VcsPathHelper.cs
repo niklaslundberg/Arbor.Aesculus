@@ -69,7 +69,7 @@ namespace Arbor.Aesculus.Core
 
             bool IsNamedRoot(DirectoryInfo dir)
             {
-                return SourceRootDirectoryNames.Any(rootName =>
+                return SourceRootDirectoryNames.Exists(rootName =>
                     dir.Name.Equals(rootName, StringComparison.OrdinalIgnoreCase));
             }
 
@@ -77,7 +77,7 @@ namespace Arbor.Aesculus.Core
 
             bool IsRootFile(FileInfo file)
             {
-                return SourceRootFileNames.Any(rootFile =>
+                return SourceRootFileNames.Exists(rootFile =>
                     file.Name.Equals(rootFile, StringComparison.OrdinalIgnoreCase));
             }
 
@@ -86,21 +86,21 @@ namespace Arbor.Aesculus.Core
             IEnumerable<DirectoryInfo> subDirectories = currentDirectory.EnumerateDirectories();
 
             bool directoryHasSourceRoot = subDirectories.Any(dir =>
-                SourceRootDirectoryNames.Any(pattern => dir.Name.Equals(pattern, StringComparison.OrdinalIgnoreCase)));
+                SourceRootDirectoryNames.Exists(pattern => dir.Name.Equals(pattern, StringComparison.OrdinalIgnoreCase)));
 
             if (directoryHasSourceRoot)
             {
                 return currentDirectory;
             }
 
-            bool isRootDir = directoryCriterion.Any(filter => filter(currentDirectory));
+            bool isRootDir = directoryCriterion.Exists(filter => filter(currentDirectory));
 
             if (isRootDir)
             {
                 return currentDirectory;
             }
 
-            bool hasRootFile = currentDirectory.EnumerateFiles().Any(file => fileCriterion.Any(filter => filter(file)));
+            bool hasRootFile = currentDirectory.EnumerateFiles().Any(file => fileCriterion.Exists(filter => filter(file)));
 
             if (hasRootFile)
             {
