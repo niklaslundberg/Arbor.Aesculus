@@ -17,7 +17,7 @@ namespace Arbor.Aesculus.Core
         public static string? TryFindVcsRootPath(string? startDirectory = null, Action<string>? logger = null)
         {
             string directoryPath = !string.IsNullOrWhiteSpace(startDirectory)
-                ? startDirectory
+                ? startDirectory!
                 : AppContext.BaseDirectory;
 
             if (!Directory.Exists(directoryPath))
